@@ -24,5 +24,7 @@ class ExampleTest extends TestCase
         $response->assertSee('images/logo/logo-iic.png');
         $response->assertSee('images/logo/favicon-32.png');
         $response->assertSee('favicon.ico');
+        $response->assertSee('Sandi Hasyono');
+        $response->assertSee('https://wa.me/6281280035369');
     }
 }

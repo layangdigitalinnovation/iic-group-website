@@ -96,7 +96,7 @@ class HomeController extends Controller
                     ],
                     'note' => 'Group-catering partnerships are aligned with verified kitchen capacity, local approvals, supplier readiness and mutually agreed service levels.',
                     'link' => ['label' => 'smanksa.com', 'url' => 'https://smanksa.com'],
-                    'contact' => ['name' => 'Chilmi Dzulkarom', 'phone' => '+62 889-7174-9143'],
+                    'contact' => ['name' => 'Sandi Hasyono', 'phone' => '+62 812-8003-5369'],
                 ],
                 [
                     'id' => 'saair',
