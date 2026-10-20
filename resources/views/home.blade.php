@@ -16,6 +16,7 @@
             <span></span><span></span><span></span>
         </button>
         <nav class="nav" data-nav>
+            <a href="#profile-video">Video Profile</a>
             <a href="#about">About</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#ecosystem">Ecosystem</a>
@@ -37,11 +38,150 @@
         <p class="hero-sub">Connecting Business. Building Opportunities. Creating Growth.</p>
         <p class="hero-lead">The premier business integrator and integrated service ecosystem bridging Indonesia and the Kingdom of Saudi Arabia.</p>
         <div class="hero-actions">
-            <a href="#portfolio" class="btn btn-gold">Explore our portfolio</a>
+            <a href="#profile-video" class="btn btn-gold btn-hero-video" id="btn-hero-watch">
+                <svg class="btn-play-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                </svg>
+                <span>Watch Company Profile</span>
+            </a>
+            <a href="#portfolio" class="btn btn-outline">Explore our portfolio</a>
             <a href="#contact" class="btn btn-outline">Partner with us</a>
         </div>
         <p class="hero-tag" lang="ar" dir="rtl">ليشهدوا منافع لهم</p>
         <p class="hero-tag-en">{{ $company['tagline'] }}</p>
+    </div>
+</section>
+
+{{-- ===== Corporate Profile Video Section ===== --}}
+<section class="section section-video" id="profile-video">
+    <div class="container">
+        <header class="section-head center">
+            <div class="video-badge-wrap">
+                <span class="video-tag-pill">
+                    <span class="pulse-dot"></span>
+                    {{ $video['badge'] }}
+                </span>
+            </div>
+            <h2>{{ $video['title'] }}</h2>
+            <p class="video-tagline-ar" lang="ar" dir="rtl">{{ $video['arabic_tagline'] }}</p>
+            <p class="lead light">{{ $video['summary'] }}</p>
+        </header>
+
+        <div class="video-theater" id="video-theater">
+            <div class="video-frame-container" id="video-frame-container">
+                {{-- Ambient Backlight Glow --}}
+                <div class="video-ambient-glow" aria-hidden="true"></div>
+
+                <div class="video-wrapper">
+                    <video id="main-profile-video"
+                           class="main-video-player"
+                           preload="metadata"
+                           playsinline
+                           controls
+                           poster="{{ asset($video['poster']) }}">
+                        <source src="{{ asset($video['src']) }}" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+
+                    {{-- Elegant Initial Play Overlay --}}
+                    <div class="video-poster-overlay" id="video-poster-overlay">
+                        <div class="overlay-brand">
+                            <span class="overlay-badge">IIC Group · Official Showcase</span>
+                        </div>
+                        <button type="button" class="video-big-play-btn" id="video-big-play-btn" aria-label="Play Corporate Profile Video">
+                            <span class="play-ripple"></span>
+                            <span class="play-ripple delay"></span>
+                            <span class="play-btn-circle">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon">
+                                    <polygon points="7 4 21 12 7 20 7 4"></polygon>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="overlay-info">
+                            <h3 class="overlay-title">{{ $company['legal'] }}</h3>
+                            <p class="overlay-meta">Click to watch full company profile</p>
+                        </div>
+                    </div>
+
+                    {{-- Quick Video Controls Bar (Top Float) --}}
+                    <div class="video-floating-bar">
+                        <span class="floating-badge">
+                            <span class="live-indicator"></span> IIC Group Profile
+                        </span>
+                        <div class="floating-tools">
+                            <button type="button" class="btn-tool" id="btn-theater-mode" title="Toggle Theater Mode" aria-label="Theater Mode">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    <line x1="8" y1="4" x2="8" y2="20"></line>
+                                    <line x1="16" y1="4" x2="16" y2="20"></line>
+                                </svg>
+                                <span class="tool-label">Theater</span>
+                            </button>
+                            <button type="button" class="btn-tool" id="btn-pip-mode" title="Picture in Picture" aria-label="Picture in Picture">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    <rect x="12" y="10" width="8" height="8" rx="1"></rect>
+                                </svg>
+                                <span class="tool-label">Mini</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Interactive Chapters / Jump to Scene --}}
+            <div class="video-chapters-wrap">
+                <div class="chapters-header">
+                    <span class="chapters-title">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        Video Chapters &amp; Highlights
+                    </span>
+                    <span class="chapters-hint">Click any milestone to jump directly</span>
+                </div>
+                <div class="chapters-list">
+                    @foreach ($video['chapters'] as $ch)
+                        <button type="button" class="chapter-chip" data-time="{{ $ch['seconds'] }}">
+                            <span class="chip-time">{{ $ch['time'] }}</span>
+                            <span class="chip-text">
+                                <strong>{{ $ch['label'] }}</strong>
+                                <small>{{ $ch['desc'] }}</small>
+                            </span>
+                        </button>
+                    @endforeach
+                </div>
+            </div>
+
+            {{-- 4 Executive Takeaways Grid --}}
+            <div class="grid grid-4 video-highlights">
+                @foreach ($video['highlights'] as $h)
+                    <div class="card card-dark video-highlight-card">
+                        <span class="v-num">{{ $h['num'] }}</span>
+                        <h4>{{ $h['title'] }}</h4>
+                        <p>{{ $h['text'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- Post-Video Actions --}}
+            <div class="video-bottom-actions">
+                <a href="#contact" class="btn btn-gold">
+                    Partner with IIC Group
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a href="#forms" class="btn btn-outline">
+                    Apply via Partner Curation
+                </a>
+                <button type="button" class="btn btn-outline btn-copy-link" data-url="{{ url('/') }}#profile-video">
+                    Share Profile Video
+                </button>
+            </div>
+        </div>
     </div>
 </section>
 

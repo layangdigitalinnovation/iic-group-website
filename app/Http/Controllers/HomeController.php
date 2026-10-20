@@ -21,6 +21,45 @@ class HomeController extends Controller
                 'email' => 'holding@iic-corp.com',
             ],
 
+            'video' => [
+                'src' => 'video/iicgroup.mp4',
+                'poster' => 'images/video-poster.jpg',
+                'badge' => 'Official Corporate Profile',
+                'title' => 'IIC Group: Connecting Indonesia & Saudi Arabia',
+                'arabic_tagline' => 'ليشهدوا منافع لهم',
+                'tagline_en' => 'To Witness the Benefit for Them',
+                'summary' => 'Discover how Ibraahim Ibaadurrahmaan Corporation builds strategic cross-border partnerships, compliant business frameworks, and integrated services bridging Indonesian enterprise with the Kingdom of Saudi Arabia.',
+                'chapters' => [
+                    ['time' => '00:00', 'seconds' => 0, 'label' => 'Vision & Identity', 'desc' => 'The founding mission of IIC Group'],
+                    ['time' => '00:34', 'seconds' => 34, 'label' => 'Cross-Border Technology & Services', 'desc' => 'Real-time passport verification & systems'],
+                    ['time' => '01:30', 'seconds' => 90, 'label' => '5 Business Units Ecosystem', 'desc' => 'Fintech, travel marketplace, F&B & pilgrim logistics'],
+                    ['time' => '03:15', 'seconds' => 195, 'label' => 'Legal Umbrella & Saudi Market', 'desc' => 'Lawful structuring, licensing & local execution'],
+                    ['time' => '04:30', 'seconds' => 270, 'label' => 'Shared Prosperity for the Ummah', 'desc' => 'Enduring social and economic value'],
+                ],
+                'highlights' => [
+                    [
+                        'num' => '01',
+                        'title' => 'The Legal Umbrella',
+                        'text' => 'Direct access and lawful corporate structures for enterprises entering the Saudi Arabian market.',
+                    ],
+                    [
+                        'num' => '02',
+                        'title' => 'Integrated Ecosystem',
+                        'text' => 'Bridging finance, mobility, hospitality, and smart pilgrim management across 5 business units.',
+                    ],
+                    [
+                        'num' => '03',
+                        'title' => 'B2B Value Chain Bridge',
+                        'text' => 'Connecting verified Indonesian capabilities with vetted Saudi public and private market opportunities.',
+                    ],
+                    [
+                        'num' => '04',
+                        'title' => 'Principle of Justice & Amanah',
+                        'text' => 'Governance rooted in ethical dealing, Sharia awareness, and mutual trust.',
+                    ],
+                ],
+            ],
+
             'pillars' => [
                 [
                     'title' => 'The Legal Umbrella',

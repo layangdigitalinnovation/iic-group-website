@@ -29,6 +29,8 @@ boost.json
 /public/fonts-manifest.dev.json
 /public/hot
 /public/storage
+/public/video/*.mp4
+!/public/video/.gitkeep
 /storage/*.key
 /storage/pail
 /vendor
