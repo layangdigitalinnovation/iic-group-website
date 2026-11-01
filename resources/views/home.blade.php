@@ -55,6 +55,7 @@
 {{-- ===== Corporate Profile Video Section ===== --}}
 <section class="section section-video" id="profile-video">
     <div class="container">
+        {{-- Video Showcase Header --}}
         <header class="section-head center">
             <div class="video-badge-wrap">
                 <span class="video-tag-pill">
@@ -62,125 +63,263 @@
                     {{ $video['badge'] }}
                 </span>
             </div>
-            <h2>{{ $video['title'] }}</h2>
+            <h2>IIC Group Corporate Profile</h2>
             <p class="video-tagline-ar" lang="ar" dir="rtl">{{ $video['arabic_tagline'] }}</p>
-            <p class="lead light">{{ $video['summary'] }}</p>
+            <p class="lead light">Discover the strategic cross-border partnerships, business ecosystem, and national roadmap of IIC Group across two official profile editions.</p>
         </header>
 
-        <div class="video-theater" id="video-theater">
-            <div class="video-frame-container" id="video-frame-container">
-                {{-- Ambient Backlight Glow --}}
-                <div class="video-ambient-glow" aria-hidden="true"></div>
+        {{-- Video Language Version Switcher --}}
+        <div class="video-edition-switch" role="tablist" aria-label="Video Language Version">
+            <a href="#edition-english" class="video-switch-pill is-active" id="pill-switch-corporate" role="tab" aria-selected="true">
+                <span class="pill-dot"></span>
+                <span class="pill-text-wrap">
+                    <span class="pill-title">English Version</span>
+                </span>
+            </a>
+            <a href="#edition-indonesia" class="video-switch-pill" id="pill-switch-indonesia" role="tab" aria-selected="false">
+                <span class="pill-dot emerald"></span>
+                <span class="pill-text-wrap">
+                    <span class="pill-title">Bahasa Indonesia</span>
+                </span>
+            </a>
+        </div>
 
-                <div class="video-wrapper">
-                    <video id="main-profile-video"
-                           class="main-video-player"
-                           preload="metadata"
-                           playsinline
-                           controls
-                           poster="{{ asset($video['poster']) }}">
-                        <source src="{{ asset($video['src']) }}" type="video/mp4">
-                        Your browser does not support HTML5 video.
-                    </video>
+        {{-- Video Editions Container --}}
+        <div class="video-editions-container">
+            {{-- ===== English Version ===== --}}
+            <div class="edition-block" id="edition-english">
+                <div class="edition-meta-bar">
+                    <div class="edition-title-wrap">
+                        <span class="edition-pill">English Version</span>
+                        <h3 class="edition-heading">IIC Group Corporate Profile</h3>
+                    </div>
+                </div>
 
-                    {{-- Elegant Initial Play Overlay --}}
-                    <div class="video-poster-overlay" id="video-poster-overlay">
-                        <div class="overlay-brand">
-                            <span class="overlay-badge">IIC Group · Official Showcase</span>
+                <div class="video-theater" id="video-theater">
+                    <div class="video-frame-container" id="video-frame-container">
+                        <div class="video-ambient-glow" aria-hidden="true"></div>
+
+                        <div class="video-wrapper">
+                            <video id="main-profile-video"
+                                   class="main-video-player"
+                                   preload="metadata"
+                                   playsinline
+                                   controls
+                                   poster="{{ asset($video['poster']) }}">
+                                <source src="{{ asset($video['src']) }}" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+
+                            {{-- Elegant Initial Play Overlay --}}
+                            <div class="video-poster-overlay" id="video-poster-overlay">
+                                <div class="overlay-brand">
+                                    <span class="overlay-badge">IIC Group · English</span>
+                                </div>
+                                <button type="button" class="video-big-play-btn" id="video-big-play-btn" aria-label="Play Corporate Profile Video (English)">
+                                    <span class="play-ripple"></span>
+                                    <span class="play-ripple delay"></span>
+                                    <span class="play-btn-circle">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon">
+                                            <polygon points="7 4 21 12 7 20 7 4"></polygon>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="overlay-info">
+                                    <h3 class="overlay-title">{{ $company['legal'] }}</h3>
+                                    <p class="overlay-meta">Click to watch corporate profile</p>
+                                </div>
+                            </div>
+
+                            {{-- Floating Controls Bar --}}
+                            <div class="video-floating-bar">
+                                <span class="floating-badge">
+                                    <span class="live-indicator"></span> IIC Group Profile · English
+                                </span>
+                                <div class="floating-tools">
+                                    <button type="button" class="btn-tool" id="btn-theater-mode" title="Toggle Theater Mode" aria-label="Theater Mode">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                            <line x1="8" y1="4" x2="8" y2="20"></line>
+                                            <line x1="16" y1="4" x2="16" y2="20"></line>
+                                        </svg>
+                                        <span class="tool-label">Theater</span>
+                                    </button>
+                                    <button type="button" class="btn-tool" id="btn-pip-mode" title="Picture in Picture" aria-label="Picture in Picture">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                            <rect x="12" y="10" width="8" height="8" rx="1"></rect>
+                                        </svg>
+                                        <span class="tool-label">Mini</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <button type="button" class="video-big-play-btn" id="video-big-play-btn" aria-label="Play Corporate Profile Video">
-                            <span class="play-ripple"></span>
-                            <span class="play-ripple delay"></span>
-                            <span class="play-btn-circle">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon">
-                                    <polygon points="7 4 21 12 7 20 7 4"></polygon>
+                    </div>
+
+                    {{-- Interactive Chapters 1 --}}
+                    <div class="video-chapters-wrap">
+                        <div class="chapters-header">
+                            <span class="chapters-title">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
                                 </svg>
+                                Video Chapters &amp; Highlights (English)
                             </span>
-                        </button>
-                        <div class="overlay-info">
-                            <h3 class="overlay-title">{{ $company['legal'] }}</h3>
-                            <p class="overlay-meta">Click to watch full company profile</p>
+                            <span class="chapters-hint">Click any milestone to jump directly</span>
                         </div>
-                    </div>
-
-                    {{-- Quick Video Controls Bar (Top Float) --}}
-                    <div class="video-floating-bar">
-                        <span class="floating-badge">
-                            <span class="live-indicator"></span> IIC Group Profile
-                        </span>
-                        <div class="floating-tools">
-                            <button type="button" class="btn-tool" id="btn-theater-mode" title="Toggle Theater Mode" aria-label="Theater Mode">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                                    <line x1="8" y1="4" x2="8" y2="20"></line>
-                                    <line x1="16" y1="4" x2="16" y2="20"></line>
-                                </svg>
-                                <span class="tool-label">Theater</span>
-                            </button>
-                            <button type="button" class="btn-tool" id="btn-pip-mode" title="Picture in Picture" aria-label="Picture in Picture">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                                    <rect x="12" y="10" width="8" height="8" rx="1"></rect>
-                                </svg>
-                                <span class="tool-label">Mini</span>
-                            </button>
+                        <div class="chapters-list">
+                            @foreach ($video['chapters'] as $ch)
+                                <button type="button" class="chapter-chip" data-time="{{ $ch['seconds'] }}">
+                                    <span class="chip-time">{{ $ch['time'] }}</span>
+                                    <span class="chip-text">
+                                        <strong>{{ $ch['label'] }}</strong>
+                                        <small>{{ $ch['desc'] }}</small>
+                                    </span>
+                                </button>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
 
-            {{-- Interactive Chapters / Jump to Scene --}}
-            <div class="video-chapters-wrap">
-                <div class="chapters-header">
-                    <span class="chapters-title">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                        Video Chapters &amp; Highlights
-                    </span>
-                    <span class="chapters-hint">Click any milestone to jump directly</span>
-                </div>
-                <div class="chapters-list">
-                    @foreach ($video['chapters'] as $ch)
-                        <button type="button" class="chapter-chip" data-time="{{ $ch['seconds'] }}">
-                            <span class="chip-time">{{ $ch['time'] }}</span>
-                            <span class="chip-text">
-                                <strong>{{ $ch['label'] }}</strong>
-                                <small>{{ $ch['desc'] }}</small>
-                            </span>
-                        </button>
-                    @endforeach
-                </div>
-            </div>
-
-            {{-- 4 Executive Takeaways Grid --}}
-            <div class="grid grid-4 video-highlights">
-                @foreach ($video['highlights'] as $h)
-                    <div class="card card-dark video-highlight-card">
-                        <span class="v-num">{{ $h['num'] }}</span>
-                        <h4>{{ $h['title'] }}</h4>
-                        <p>{{ $h['text'] }}</p>
-                    </div>
-                @endforeach
-            </div>
-
-            {{-- Post-Video Actions --}}
-            <div class="video-bottom-actions">
-                <a href="#contact" class="btn btn-gold">
-                    Partner with IIC Group
-                    <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
+            {{-- ===== Connector Between Language Versions ===== --}}
+            <div class="edition-connector">
+                <span class="edition-connector-line"></span>
+                <span class="edition-connector-pill">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                        <polygon points="12 2 15 8 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 8 12 2"></polygon>
                     </svg>
-                </a>
-                <a href="#forms" class="btn btn-outline">
-                    Apply via Partner Curation
-                </a>
-                <button type="button" class="btn btn-outline btn-copy-link" data-url="{{ url('/') }}#profile-video">
-                    Share Profile Video
-                </button>
+                    Versi Bahasa Indonesia
+                </span>
+                <span class="edition-connector-line"></span>
             </div>
+
+            {{-- ===== Indonesian Version ===== --}}
+            <div class="edition-block" id="edition-indonesia">
+                <span id="video-indonesia-2026" class="anchor-offset"></span>
+                <div class="edition-meta-bar">
+                    <div class="edition-title-wrap">
+                        <span class="edition-pill emerald">Bahasa Indonesia</span>
+                        <h3 class="edition-heading">Video Profil Perusahaan IIC Group</h3>
+                    </div>
+                </div>
+
+                <div class="video-theater" id="video-theater-indonesia">
+                    <div class="video-frame-container" id="video-frame-container-indonesia">
+                        <div class="video-ambient-glow glow-emerald" aria-hidden="true"></div>
+
+                        <div class="video-wrapper">
+                            <video id="indonesia-profile-video"
+                                   class="main-video-player"
+                                   preload="metadata"
+                                   playsinline
+                                   controls
+                                   poster="{{ asset($video_indonesia['poster']) }}">
+                                <source src="{{ asset($video_indonesia['src']) }}" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+
+                            {{-- Elegant Initial Play Overlay --}}
+                            <div class="video-poster-overlay" id="indonesia-poster-overlay">
+                                <div class="overlay-brand">
+                                    <span class="overlay-badge overlay-badge-emerald">IIC Group · Bahasa Indonesia</span>
+                                </div>
+                                <button type="button" class="video-big-play-btn" id="indonesia-big-play-btn" aria-label="Play Corporate Profile Video (Bahasa Indonesia)">
+                                    <span class="play-ripple"></span>
+                                    <span class="play-ripple delay"></span>
+                                    <span class="play-btn-circle play-btn-emerald">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon">
+                                            <polygon points="7 4 21 12 7 20 7 4"></polygon>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="overlay-info">
+                                    <h3 class="overlay-title">{{ $company['legal'] }}</h3>
+                                    <p class="overlay-meta">Klik untuk memutar video profil</p>
+                                </div>
+                            </div>
+
+                            {{-- Floating Controls Bar --}}
+                            <div class="video-floating-bar">
+                                <span class="floating-badge floating-badge-emerald">
+                                    <span class="live-indicator emerald"></span> IIC Group Profil · Bahasa Indonesia
+                                </span>
+                                <div class="floating-tools">
+                                    <button type="button" class="btn-tool" id="btn-indonesia-theater-mode" title="Toggle Theater Mode" aria-label="Theater Mode">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                            <line x1="8" y1="4" x2="8" y2="20"></line>
+                                            <line x1="16" y1="4" x2="16" y2="20"></line>
+                                        </svg>
+                                        <span class="tool-label">Theater</span>
+                                    </button>
+                                    <button type="button" class="btn-tool" id="btn-indonesia-pip-mode" title="Picture in Picture" aria-label="Picture in Picture">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                            <rect x="12" y="10" width="8" height="8" rx="1"></rect>
+                                        </svg>
+                                        <span class="tool-label">Mini</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Interactive Chapters 2 --}}
+                    <div class="video-chapters-wrap">
+                        <div class="chapters-header">
+                            <span class="chapters-title chapters-title-emerald">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                Bab &amp; Sorotan Video (Bahasa Indonesia)
+                            </span>
+                            <span class="chapters-hint">Klik bagian untuk langsung memutar</span>
+                        </div>
+                        <div class="chapters-list">
+                            @foreach ($video_indonesia['chapters'] as $ch)
+                                <button type="button" class="chapter-chip chapter-chip-indonesia" data-time="{{ $ch['seconds'] }}">
+                                    <span class="chip-time chip-time-emerald">{{ $ch['time'] }}</span>
+                                    <span class="chip-text">
+                                        <strong>{{ $ch['label'] }}</strong>
+                                        <small>{{ $ch['desc'] }}</small>
+                                    </span>
+                                </button>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- ===== 4 Executive Takeaways Grid (Shared across company profile) ===== --}}
+        <div class="grid grid-4 video-highlights">
+            @foreach ($video['highlights'] as $h)
+                <div class="card card-dark video-highlight-card">
+                    <span class="v-num">{{ $h['num'] }}</span>
+                    <h4>{{ $h['title'] }}</h4>
+                    <p>{{ $h['text'] }}</p>
+                </div>
+            @endforeach
+        </div>
+
+        {{-- ===== Post-Video Actions (Shared across company profile) ===== --}}
+        <div class="video-bottom-actions">
+            <a href="#contact" class="btn btn-gold">
+                Partner with IIC Group
+                <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+            <a href="#forms" class="btn btn-outline">
+                Apply via Partner Curation
+            </a>
+            <button type="button" class="btn btn-outline btn-copy-link" data-url="{{ url('/') }}#profile-video">
+                Share Profile Video
+            </button>
         </div>
     </div>
 </section>

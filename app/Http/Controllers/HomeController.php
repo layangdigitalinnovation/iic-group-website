@@ -60,6 +60,24 @@ class HomeController extends Controller
                 ],
             ],
 
+            'video_indonesia' => [
+                'src' => 'video/iic-group-indonesia-2026.mp4',
+                'poster' => 'images/video-indonesia-poster.jpg',
+                'badge' => 'Official Corporate Profile',
+                'language' => 'Bahasa Indonesia',
+                'title' => 'IIC Group: Menghubungkan Indonesia & Arab Saudi',
+                'arabic_tagline' => 'ليشهدوا منافع لهم',
+                'tagline_en' => 'To Witness the Benefit for Them',
+                'summary' => 'Temukan bagaimana IIC Group membangun kemitraan strategis lintas batas, kerangka kepatuhan bisnis, dan layanan terintegrasi yang menjembatani dunia usaha Indonesia dengan Kerajaan Arab Saudi.',
+                'chapters' => [
+                    ['time' => '00:00', 'seconds' => 0, 'label' => 'Visi & Identitas', 'desc' => 'Misi pendirian dan nilai dasar IIC Group'],
+                    ['time' => '00:34', 'seconds' => 34, 'label' => 'Teknologi & Layanan Lintas Batas', 'desc' => 'Verifikasi paspor dan sistem terpadu real-time'],
+                    ['time' => '01:30', 'seconds' => 90, 'label' => 'Ekosistem 5 Unit Bisnis', 'desc' => 'Fintech, travel marketplace, F&B & logistik jamaah'],
+                    ['time' => '03:15', 'seconds' => 195, 'label' => 'Payung Hukum & Pasar Saudi', 'desc' => 'Struktur legal, perizinan & eksekusi lokal'],
+                    ['time' => '04:30', 'seconds' => 270, 'label' => 'Kemakmuran Bersama bagi Umat', 'desc' => 'Nilai ekonomi dan sosial yang berkelanjutan'],
+                ],
+            ],
+
             'pillars' => [
                 [
                     'title' => 'The Legal Umbrella',
