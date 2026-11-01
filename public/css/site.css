@@ -838,6 +838,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     gap: .85rem;
     flex-wrap: wrap;
 }
+.edition-actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
 .edition-pill {
     display: inline-flex;
     align-items: center;
@@ -972,6 +977,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     color: #6ee7b7;
 }
 
+.video-floating-bar {
+    display: none !important;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
     .grid-5 { grid-template-columns: repeat(3, 1fr); }
@@ -997,6 +1006,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     .play-icon { width: 24px; height: 24px; }
     .chapters-list { grid-template-columns: 1fr; }
     .btn-tool .tool-label { display: none; }
+    .desktop-only { display: none !important; }
     .video-edition-switch { gap: .6rem; }
     .video-switch-pill { padding: .6rem 1rem; }
     .video-showcase-divider { margin: 3.5rem 0 2.5rem; gap: .7rem; }

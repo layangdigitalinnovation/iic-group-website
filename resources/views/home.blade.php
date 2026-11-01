@@ -93,6 +93,16 @@
                         <span class="edition-pill">English Version</span>
                         <h3 class="edition-heading">IIC Group Corporate Profile</h3>
                     </div>
+                    <div class="edition-actions desktop-only">
+                        <button type="button" class="btn-tool" id="btn-theater-mode" title="Toggle Theater Mode">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <line x1="8" y1="4" x2="8" y2="20"></line>
+                                <line x1="16" y1="4" x2="16" y2="20"></line>
+                            </svg>
+                            <span class="tool-label">Theater Mode</span>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="video-theater" id="video-theater">
@@ -127,30 +137,6 @@
                                 <div class="overlay-info">
                                     <h3 class="overlay-title">{{ $company['legal'] }}</h3>
                                     <p class="overlay-meta">Click to watch corporate profile</p>
-                                </div>
-                            </div>
-
-                            {{-- Floating Controls Bar --}}
-                            <div class="video-floating-bar">
-                                <span class="floating-badge">
-                                    <span class="live-indicator"></span> IIC Group Profile · English
-                                </span>
-                                <div class="floating-tools">
-                                    <button type="button" class="btn-tool" id="btn-theater-mode" title="Toggle Theater Mode" aria-label="Theater Mode">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                                            <line x1="8" y1="4" x2="8" y2="20"></line>
-                                            <line x1="16" y1="4" x2="16" y2="20"></line>
-                                        </svg>
-                                        <span class="tool-label">Theater</span>
-                                    </button>
-                                    <button type="button" class="btn-tool" id="btn-pip-mode" title="Picture in Picture" aria-label="Picture in Picture">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                                            <rect x="12" y="10" width="8" height="8" rx="1"></rect>
-                                        </svg>
-                                        <span class="tool-label">Mini</span>
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -203,6 +189,16 @@
                         <span class="edition-pill emerald">Bahasa Indonesia</span>
                         <h3 class="edition-heading">Video Profil Perusahaan IIC Group</h3>
                     </div>
+                    <div class="edition-actions desktop-only">
+                        <button type="button" class="btn-tool" id="btn-indonesia-theater-mode" title="Toggle Theater Mode">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <line x1="8" y1="4" x2="8" y2="20"></line>
+                                <line x1="16" y1="4" x2="16" y2="20"></line>
+                            </svg>
+                            <span class="tool-label">Theater Mode</span>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="video-theater" id="video-theater-indonesia">
@@ -237,30 +233,6 @@
                                 <div class="overlay-info">
                                     <h3 class="overlay-title">{{ $company['legal'] }}</h3>
                                     <p class="overlay-meta">Klik untuk memutar video profil</p>
-                                </div>
-                            </div>
-
-                            {{-- Floating Controls Bar --}}
-                            <div class="video-floating-bar">
-                                <span class="floating-badge floating-badge-emerald">
-                                    <span class="live-indicator emerald"></span> IIC Group Profil · Bahasa Indonesia
-                                </span>
-                                <div class="floating-tools">
-                                    <button type="button" class="btn-tool" id="btn-indonesia-theater-mode" title="Toggle Theater Mode" aria-label="Theater Mode">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                                            <line x1="8" y1="4" x2="8" y2="20"></line>
-                                            <line x1="16" y1="4" x2="16" y2="20"></line>
-                                        </svg>
-                                        <span class="tool-label">Theater</span>
-                                    </button>
-                                    <button type="button" class="btn-tool" id="btn-indonesia-pip-mode" title="Picture in Picture" aria-label="Picture in Picture">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                                            <rect x="12" y="10" width="8" height="8" rx="1"></rect>
-                                        </svg>
-                                        <span class="tool-label">Mini</span>
-                                    </button>
                                 </div>
                             </div>
                         </div>
